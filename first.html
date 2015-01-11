@@ -1,0 +1,82 @@
+<html>
+<body>
+  <style>
+  .colorSquare {
+    background-color:blue;
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+  }
+
+  .nose .colorSquare {
+    background-color: purple;
+  }
+
+  .mouth .colorSquare {
+    background-color: pink;
+  }
+
+  .blankSquare {
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+  }
+  </style>
+  <script type="text/javascript">
+  function doIt() {
+    var name = document.getElementById('name').value;
+    var colorInfo = "";
+
+    var setColor = function(color) {
+      colorInfo = "Your favorite color is " + color + "!";
+      document.bgColor = color;
+    }
+
+    var nameLower = name.toLowerCase();
+    if(nameLower === "jessica") {
+      setColor('purple');
+    } else if(nameLower === "miles") {
+      setColor('green');
+    } else if(nameLower === "mommy" || nameLower === "kara") {
+      setColor('red');
+    } else if(nameLower === "daddy"|| nameLower === "jake" || nameLower === "jacob") {
+      setColor('blue');
+    } else if(nameLower === 'whiskers') {
+      setColor('black');
+    } else {
+      document.bgColor = 'white';
+    }
+    alert('Hi ' + name + "! " + colorInfo);
+  }J
+
+  function clearIt() {
+    document.getElementById('name').value = "";
+  }
+  </script>
+  <div style="background-color:purple;color:white">hi jessica!</div>
+  <div style="background-color:blue;color:white;">hi daddy, I love you very much!</div>
+  <button onclick="alert('I love you!')">click me!</button>
+  <div style="background-color:green;color:white">we love miles too</div>
+  <div style="background-color:red;color:white">we all love mommy too</div>
+  <label style="background-color:white" for="name">What is your name?</label><input type="text" id="name">
+  <button onclick="doIt()">click</button>
+  <button onclick="clearIt()">clear</button>
+  <div class="eyes">
+    <span class="colorSquare"></span>
+    <span class="blankSquare"></span>
+    <span class="colorSquare"></span>
+  </div>
+    <div class="nose">
+    <span class="blankSquare"></span>
+    <span class="colorSquare"></span>
+    <span class="blankSquare"></span>
+  </div>
+  <div class="mouth">
+    <span class="colorSquare"></span>
+    <span class="colorSquare"></span>
+    <span class="colorSquare"></span>
+  </div>
+  <div>this is my art -- Jessica</div>
+
+</body>
+</html>
